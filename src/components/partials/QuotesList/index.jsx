@@ -8,6 +8,10 @@ const NUMBER_OF_COLUMN = 2;
 
 class QuotesList extends React.Component {
 
+    handleRemoveQuote = (id) => {
+        this.props.dispatch(actions.removeQuote(id))
+    } 
+
     render() {
         const { quotes } = this.props
 
@@ -25,9 +29,11 @@ class QuotesList extends React.Component {
                         {quotesColumn.map((quote) => (
                             <Quotes
                                 key={quote.id}
+                                id={quote.id}
                                 content={quote.content}
                                 tags={quote.tags}
                                 participant={quote.participant}
+                                handleRemoveQuote={this.handleRemoveQuote}
                             />
                         ))}
                     </div>
