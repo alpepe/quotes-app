@@ -4,6 +4,19 @@ $mobile: "(max-width: 600px)";
 $mobile-landscape: "(max-width: 900px) and (orientation: landscape)";
 $tablet:  "(max-width: 1200px)";
 
+@font-face {
+    font-family: 'skila';
+    src: url(./fonts/silka-regular.woff2) format('woff2'),
+        url(./fonts/silka-regular.woff) format('woff');
+};
+
+@font-face {
+    font-family: 'skila-italic';
+    src: url(./fonts/silka-regularitalic.woff2) format('woff2'),
+        url(./fonts/silka-regularitalic.woff) format('woff');
+};
+
 body {
     background-color: $athens-gray;
+    font-family: skila, sans-serif;
 }
