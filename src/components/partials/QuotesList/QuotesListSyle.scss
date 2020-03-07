@@ -1,0 +1,71 @@
+@import "../../../static/main.scss";
+
+.quotes-list-container {
+    @extend %flex-container-row;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 1440px;
+    overflow-X: scroll;
+}
+
+.quotes-list-column {
+    @extend %flex-container-column;
+    @extend %flex-item-1;
+}
+
+.quote-container {
+    @extend %flex-container-column;
+    box-sizing: border-box; 
+    position: relative;
+    background-color: $white;
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, .2);
+    padding: 2rem 1.8rem;
+    margin: .8rem;
+    border-radius: 5px;
+
+    %quote-element {
+        margin-bottom: 1.2rem;
+    }
+
+    .quote-head {
+        @extend %flex-container-row;
+        justify-content: space-between;
+        @extend %quote-element;
+
+        .quote-icon {
+            fill: $persian-blue;
+        }
+
+        .quote-close-icon {
+            fill: $gray;
+            cursor: pointer;
+        }
+    }
+
+    .quote-content-container {
+        padding: 0 1rem;
+    }
+
+    .quote-content {
+        @extend %quote-element;
+        color: $black;
+    }
+
+    .quote-tags {
+        @extend %quote-element;
+        @extend %flex-container-row;
+        color: $gray;
+
+        .quote-tag {
+            padding: .6rem;
+            border: 1px solid $gray;
+            border-radius: 32px;
+            margin-right: 0.8rem;
+        }
+    }
+
+    .quote-participant-info {
+        @extend %quote-element;
+        color: $gray;
+    }
+}

@@ -16,7 +16,28 @@ $tablet:  "(max-width: 1200px)";
         url(./fonts/silka-regularitalic.woff) format('woff');
 };
 
-body {
-    background-color: $athens-gray;
-    font-family: skila, sans-serif;
+%flex-container {
+    display: flex !important;
+}
+
+%flex-container-row {
+    @extend %flex-container;
+    flex-direction: row;
+}
+
+%flex-container-column {
+    @extend %flex-container;
+    flex-direction: column;
+}
+
+@for $i from 1 through 10 {
+    %flex-item-#{$i} {
+        flex: #{$i};
+    }
+}
+
+body, html{
+    min-width: fit-content;
+    margin:0;
+    padding:0;
 }

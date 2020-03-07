@@ -1,23 +1,22 @@
 import React from 'react';
+import store from '../../store';
 import * as actions from '../../store/modules/quotes';
-import { connect } from 'react-redux';
+import QuotesList from '../partials/QuotesList';
 
 class MainLayout extends React.Component {
 
     componentDidMount() {
-        this.props.dispatch(actions.getQuotes());
+        store.dispatch(actions.getQuotes());
     }
 
     render() {
-        console.log(this.props.quotes)
+
         return (
             <div>
-                Quotes APP
+                <QuotesList />
             </div>
             );
         }
     }
 
-export default connect(state => ({
-    quotes: state.quotes.values
-}))(MainLayout)
+export default MainLayout;
