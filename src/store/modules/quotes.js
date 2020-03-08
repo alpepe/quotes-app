@@ -36,7 +36,8 @@ export default function(state=DEFAULT_STATE, action) {
             sortingFilter: filter,
             ascendingSortingDirections: {
                 ...state.ascendingSortingDirections,
-                [filter]: isFilterSelected && !state.ascendingSortingDirections[filter]}
+                [filter]: isFilterSelected ? !state.ascendingSortingDirections[filter] : state.ascendingSortingDirections[filter]
+            }
         }
     }
 
