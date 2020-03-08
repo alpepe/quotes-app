@@ -16,17 +16,21 @@ class QuotesList extends React.Component {
     } 
 
     render() {
-        const { quotes, sortingFilter, ascSortingDirection } = this.props
+        const { quotes, sortingFilter, ascSortingDirection, searchBarValue } = this.props
 
         if (quotes.length === 0) {
             return null;
         }
 
-        //concat() was added to avoid a 'quotes' mutation
-        const sortedQuotes = quotes.concat().sort((a, b) => ascSortingDirection
+        const isSearchApplied = searchBarValue.length > 2;
+        const quotesForProcessing = isSearchApplied
+            ? quotes.filter((quote) => quote.content.toLowerCase().includes(searchBarValue))
+            : quotes;
+
+        const sortedQuotes = quotesForProcessing.sort((a, b) => ascSortingDirection
             ? sortАscending(a.participant[sortingFilter], b.participant[sortingFilter])
             : sortDescending(a.participant[sortingFilter], b.participant[sortingFilter])
-        )
+        );
 
         const quotesByColumns = [...(Array(NUMBER_OF_COLUMN).keys())]
             .map(columnIndex => sortedQuotes.filter((_, quoteIndex) => columnIndex === quoteIndex % NUMBER_OF_COLUMN));
@@ -55,7 +59,8 @@ class QuotesList extends React.Component {
 const mapStateToProps = (state) => ({
     quotes: state.quotes.values,
     sortingFilter: state.quotes.sortingFilter,
-    ascSortingDirection: state.quotes.ascendingSortingDirections[state.quotes.sortingFilter]
+    ascSortingDirection: state.quotes.ascendingSortingDirections[state.quotes.sortingFilter],
+    searchBarValue: state.quotes.searchBarValue
 });
 
 export default connect(mapStateToProps)(QuotesList)

@@ -5,6 +5,7 @@ const GET_QUOTES = 'GET_QUOTES';
 const GET_QUOTES_FULFILLED = 'GET_QUOTES_FULFILLED';
 const REMOVE_QUOTE = 'REMOVE_QUOTE';
 const CHANGE_SELECTED_FILTER = 'CHANGE_SELECTED_FILTER';
+const UPDATE_SEARCH_BAR_VALUE = 'UPDATE_SEARCH_BAR_VALUE';
 
 const DEFAULT_STATE = {
     values: [],
@@ -12,7 +13,8 @@ const DEFAULT_STATE = {
     ascendingSortingDirections: {
         [QUOTE_FILTERS.NATIONALITY]: true,
         [QUOTE_FILTERS.NAME]: false
-    }
+    },
+    searchBarValue: ""
 
 };
 
@@ -38,6 +40,10 @@ export default function(state=DEFAULT_STATE, action) {
         }
     }
 
+    if (action.type === UPDATE_SEARCH_BAR_VALUE) {
+        return {...state, searchBarValue: action.payload}
+    }
+
 
     return state;
 }
@@ -55,4 +61,9 @@ export const removeQuote = (id) => ({
 export const changeSelectedFilter = (filter) => ({
     type: CHANGE_SELECTED_FILTER,
     payload: filter
+})
+
+export const updateSearchBarValue = (value) => ({
+    type: UPDATE_SEARCH_BAR_VALUE,
+    payload: value
 })

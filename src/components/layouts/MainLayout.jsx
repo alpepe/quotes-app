@@ -3,6 +3,7 @@ import store from '../../store';
 import * as actions from '../../store/modules/quotes';
 import QuotesList from '../partials/QuotesList';
 import SortButtons from '../partials/SortButtons';
+import SearchBar from '../partials/SearchBar'
 
 class MainLayout extends React.Component {
 
@@ -13,10 +14,11 @@ class MainLayout extends React.Component {
     render() {
 
         return (
-            <div>
+            <React.Fragment>
+                <SearchBar />
                 <SortButtons />
                 <QuotesList />
-            </div>
+            </React.Fragment>
             );
         }
     }

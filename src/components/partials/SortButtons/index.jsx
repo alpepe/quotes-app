@@ -4,7 +4,6 @@ import SortButton from './SortButton';
 import { QUOTE_FILTERS } from '../../../static/config';
 import * as actions from '../../../store/modules/quotes';
 import './SortButtonsStyle.scss';
-import store from '../../../store';
 
 const SortButtons = ({sortingFilter, ascSortingDirection, dispatch}) => {
 

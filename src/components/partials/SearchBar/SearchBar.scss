@@ -1,0 +1,31 @@
+@import "../../../static/main.scss";
+
+.search-bar-container {
+    @extend %flex-container;
+    justify-content: flex-start;
+    @extend %box-shadow;
+    width: 600px;
+    margin: .8rem auto;
+    padding: .6rem;
+    border-radius: 32px;
+    color: $gray
+}
+
+.search-bar-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.2rem;
+    color: $gray;
+}
+
+.search-bar-icon {
+    fill: $gray;
+    margin-right: .8rem;
+}
+
+@media #{$mobile} {
+    .search-bar-container {
+        width: 90%;
+    }
+}
