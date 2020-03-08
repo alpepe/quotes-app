@@ -8,8 +8,8 @@ const Quotes = ({content, tags, participant, handleRemoveQuote, id}) => {
     return (
         <div className="quote-container">
             <div className="quote-head" >
-                <Icon name='quotes' width="30px" height="30px" styleIcon="quote-icon" />
-                <Icon name='close' width="30px" height="30px" styleIcon="quote-close-icon" onClick={() => handleRemoveQuote(id)}/>
+                <Icon name='quotes' width="1.8rem" height="1.8rem" styleIcon="quote-icon" />
+                <Icon name='close' width="1.8rem" height="1.8rem" styleIcon="quote-close-icon" onClick={() => handleRemoveQuote(id)}/>
             </div>
             <div className="quote-content-container">
                 <div className="quote-content">

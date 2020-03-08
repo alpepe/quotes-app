@@ -6,6 +6,9 @@ import './QuotesListSyle.scss';
 
 const NUMBER_OF_COLUMN = 2;
 
+const sortАscending = (a, b) => ((a > b) ? 1 : -1)
+const sortDescending = (a, b) => ((a < b) ? 1 : -1)
+
 class QuotesList extends React.Component {
 
     handleRemoveQuote = (id) => {
@@ -13,14 +16,20 @@ class QuotesList extends React.Component {
     } 
 
     render() {
-        const { quotes } = this.props
+        const { quotes, sortingFilter, ascSortingDirection } = this.props
 
         if (quotes.length === 0) {
             return null;
         }
 
+        //concat() was added to avoid a 'quotes' mutation
+        const sortedQuotes = quotes.concat().sort((a, b) => ascSortingDirection
+            ? sortАscending(a.participant[sortingFilter], b.participant[sortingFilter])
+            : sortDescending(a.participant[sortingFilter], b.participant[sortingFilter])
+        )
+
         const quotesByColumns = [...(Array(NUMBER_OF_COLUMN).keys())]
-            .map(columnIndex => quotes.filter((_, quoteIndex) => columnIndex === quoteIndex % NUMBER_OF_COLUMN));
+            .map(columnIndex => sortedQuotes.filter((_, quoteIndex) => columnIndex === quoteIndex % NUMBER_OF_COLUMN));
 
         return (
             <div className='quotes-list-container'>
@@ -44,7 +53,9 @@ class QuotesList extends React.Component {
     }
 
 const mapStateToProps = (state) => ({
-    quotes: state.quotes.values
+    quotes: state.quotes.values,
+    sortingFilter: state.quotes.sortingFilter,
+    ascSortingDirection: state.quotes.ascendingSortingDirections[state.quotes.sortingFilter]
 });
 
 export default connect(mapStateToProps)(QuotesList)

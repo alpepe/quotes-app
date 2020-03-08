@@ -36,7 +36,12 @@ $tablet:  "(max-width: 1200px)";
     }
 }
 
+%box-shadow {
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, .2);
+}
+
 body, html{
+    font-family: skila, sans-serif;
     min-width: fit-content;
     margin:0;
     padding:0;

@@ -1,0 +1,28 @@
+@import "../../../static/main.scss";
+
+.sort-buttons-container {
+    @extend %flex-container-row;
+    justify-content: center;
+    align-items: center;
+    color: $gray;
+    margin: 0 auto;
+}
+
+.sort-button-container {
+    @extend %flex-container-row;
+    justify-content: center;
+    align-items: center;
+    @extend %box-shadow;
+    cursor: pointer;
+    padding: .8rem;
+    border-radius: 32px;
+    margin-left: .8rem;
+
+    &-active {
+        color: $persian-blue;
+    }
+
+    .sort-button-icon {
+        fill: $gray;
+    }
+}
