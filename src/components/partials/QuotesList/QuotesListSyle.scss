@@ -53,10 +53,10 @@
 
     .quote-tags {
         @extend %quote-element;
-        @extend %flex-container-row;
         color: $gray;
 
         .quote-tag {
+            display: inline-block;
             padding: .6rem;
             border: 1px solid $gray;
             border-radius: 32px;

@@ -13,21 +13,23 @@ const SortButtons = ({sortingFilter, ascSortingDirection, dispatch}) => {
 
     return (
         <div className="sort-buttons-container">
-            <div>Sort by:</div>
-            <SortButton 
-                text="Participant nationality"
-                isActive={sortingFilter === QUOTE_FILTERS.NATIONALITY}
-                handleChangeFilter={handleChangeFilter}
-                filter={QUOTE_FILTERS.NATIONALITY}
-                ascSortingDirection={ascSortingDirection[QUOTE_FILTERS.NATIONALITY]}
-            />
-            <SortButton 
-                text="Participant name"
-                isActive={sortingFilter === QUOTE_FILTERS.NAME}
-                handleChangeFilter={handleChangeFilter}
-                filter={QUOTE_FILTERS.NAME}
-                ascSortingDirection={ascSortingDirection[QUOTE_FILTERS.NAME]}
-            />
+            <div className="sort-buttons-text" >Sort by:</div>
+            <div className="sort-buttons-row">
+                <SortButton 
+                    text="Participant nationality"
+                    isActive={sortingFilter === QUOTE_FILTERS.NATIONALITY}
+                    handleChangeFilter={handleChangeFilter}
+                    filter={QUOTE_FILTERS.NATIONALITY}
+                    ascSortingDirection={ascSortingDirection[QUOTE_FILTERS.NATIONALITY]}
+                />
+                <SortButton 
+                    text="Participant name"
+                    isActive={sortingFilter === QUOTE_FILTERS.NAME}
+                    handleChangeFilter={handleChangeFilter}
+                    filter={QUOTE_FILTERS.NAME}
+                    ascSortingDirection={ascSortingDirection[QUOTE_FILTERS.NAME]}
+                />
+            </div>
         </div>
         );
     }

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Quotes from './Quote';
 import './QuotesListSyle.scss';
 
-const NUMBER_OF_COLUMN = 2;
+const NUMBER_OF_COLUMNS = 2;
 
 const sortАscending = (a, b) => ((a > b) ? 1 : -1)
 const sortDescending = (a, b) => ((a < b) ? 1 : -1)
@@ -16,7 +16,7 @@ class QuotesList extends React.Component {
     } 
 
     render() {
-        const { quotes, sortingFilter, ascSortingDirection, searchBarValue } = this.props
+        const { quotes, sortingFilter, ascSortingDirection, searchBarValue, isMobile } = this.props
 
         if (quotes.length === 0) {
             return null;
@@ -32,8 +32,9 @@ class QuotesList extends React.Component {
             : sortDescending(a.participant[sortingFilter], b.participant[sortingFilter])
         );
 
-        const quotesByColumns = [...(Array(NUMBER_OF_COLUMN).keys())]
-            .map(columnIndex => sortedQuotes.filter((_, quoteIndex) => columnIndex === quoteIndex % NUMBER_OF_COLUMN));
+        const numberOfColumns = isMobile ? 1 : NUMBER_OF_COLUMNS;
+        const quotesByColumns = [...(Array(numberOfColumns).keys())]
+            .map(columnIndex => sortedQuotes.filter((_, quoteIndex) => columnIndex === quoteIndex % numberOfColumns));
 
         return (
             <div className='quotes-list-container'>
@@ -60,7 +61,8 @@ const mapStateToProps = (state) => ({
     quotes: state.quotes.values,
     sortingFilter: state.quotes.sortingFilter,
     ascSortingDirection: state.quotes.ascendingSortingDirections[state.quotes.sortingFilter],
-    searchBarValue: state.quotes.searchBarValue
+    searchBarValue: state.quotes.searchBarValue,
+    isMobile: state.ui.isMobile
 });
 
 export default connect(mapStateToProps)(QuotesList)

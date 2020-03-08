@@ -26,3 +26,17 @@
         fill: $gray;
     }
 }
+
+.sort-buttons-row {
+    @extend %flex-container-row;
+}
+
+@media #{$mobile} {
+    .sort-buttons-container {
+        flex-direction: column !important;
+    }
+
+    .sort-buttons-text {
+        margin: .8rem;
+    }
+}
