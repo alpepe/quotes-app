@@ -1,5 +1,9 @@
 # quotes-app
 
+### npm run json-server
+
+Runs the json-server on port 3001
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
