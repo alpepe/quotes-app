@@ -22,12 +22,13 @@ class QuotesList extends React.Component {
             return null;
         }
 
-        const isSearchApplied = searchBarValue.length > 2;
+        const isSearchApplied = searchBarValue.length > 1;
         const quotesForProcessing = isSearchApplied
             ? quotes.filter((quote) => quote.content.toLowerCase().includes(searchBarValue))
             : quotes;
 
-        const sortedQuotes = quotesForProcessing.sort((a, b) => ascSortingDirection
+        //added 'concat()' to avoid muting the 'quotesForProcessing'
+        const sortedQuotes = quotesForProcessing.concat().sort((a, b) => ascSortingDirection
             ? sortАscending(a.participant[sortingFilter], b.participant[sortingFilter])
             : sortDescending(a.participant[sortingFilter], b.participant[sortingFilter])
         );
