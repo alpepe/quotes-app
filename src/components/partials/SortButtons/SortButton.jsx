@@ -10,7 +10,7 @@ const SortButton = ({text, isActive, ascSortingDirection, handleChangeFilter, fi
     return (
         <div className={containerStyle} onClick={() => handleChangeFilter(filter)}>
             <div>{text}</div>
-            <Icon name={iconId} width="1.5rem" height="1.5rem" styleIcon="sort-button-icon" />
+            <Icon name={iconId} width="1.6rem" height="1.6rem" styleIcon="sort-button-icon" />
         </div>
     )
 }

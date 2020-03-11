@@ -4,7 +4,8 @@ import * as actions from '../../store/modules/quotes';
 import * as uiActions from '../../store/modules/ui';
 import QuotesList from '../partials/QuotesList';
 import SortButtons from '../partials/SortButtons';
-import SearchBar from '../partials/SearchBar'
+import SearchBar from '../partials/SearchBar';
+import './MainLayout.scss';
 
 class MainLayout extends React.Component {
 
@@ -26,11 +27,11 @@ class MainLayout extends React.Component {
     render() {
 
         return (
-            <React.Fragment>
+            <div className="main-layout-container">
                 <SearchBar />
                 <SortButtons />
                 <QuotesList />
-            </React.Fragment>
+            </div>
             );
         }
     }

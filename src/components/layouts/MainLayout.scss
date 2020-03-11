@@ -1,0 +1,8 @@
+@import "../../static/main.scss";
+
+.main-layout-container {
+    @extend %flex-container-column;
+    align-items: center;
+    padding: 1.6rem;
+    background-color: $athens-gray;
+}

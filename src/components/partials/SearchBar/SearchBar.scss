@@ -3,10 +3,11 @@
 .search-bar-container {
     @extend %flex-container;
     justify-content: flex-start;
+    background-color: $white;
     @extend %box-shadow;
     width: 600px;
-    margin: .8rem auto;
-    padding: .6rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
     border-radius: 32px;
     color: $gray
 }
@@ -15,7 +16,7 @@
     border: none;
     outline: none;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: $gray;
 }
 

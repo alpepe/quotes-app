@@ -19,18 +19,14 @@
     position: relative;
     background-color: $white;
     @extend %box-shadow;
-    padding: 2rem 1.8rem;
+    padding: 1.7rem 1.5rem;
     margin: .8rem;
-    border-radius: 5px;
-
-    %quote-element {
-        margin-bottom: 1.2rem;
-    }
+    border-radius: 10px;
 
     .quote-head {
         @extend %flex-container-row;
         justify-content: space-between;
-        @extend %quote-element;
+        margin-bottom: 1.9rem;
 
         .quote-icon {
             fill: $persian-blue;
@@ -43,17 +39,18 @@
     }
 
     .quote-content-container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
     }
 
     .quote-content {
-        @extend %quote-element;
+        margin-bottom: 2.4rem;
         color: $black;
     }
 
     .quote-tags {
-        @extend %quote-element;
+        margin-bottom: 2.4rem;
         color: $gray;
+        font-size: .8rem;
 
         .quote-tag {
             display: inline-block;
@@ -65,7 +62,7 @@
     }
 
     .quote-participant-info {
-        @extend %quote-element;
         color: $gray;
+        font-size: .8rem;
     }
 }

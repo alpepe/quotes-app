@@ -12,7 +12,7 @@ const SearchBar = ({searchBarValue, dispatch}) => {
 
     return (
         <div className="search-bar-container">
-            <Icon name="magnifier" width="1.5rem" height="1.5rem" styleIcon="search-bar-icon" />
+            <Icon name="magnifier" width="2.2rem" height="2.2rem" styleIcon="search-bar-icon" />
             <input
                 type="text"
                 onChange={handleChange}
