@@ -13,6 +13,10 @@
     @extend %flex-item-1;
 }
 
+.quotes-list-no-results {
+    color: $gray;
+}
+
 .quote-container {
     @extend %flex-container-column;
     box-sizing: border-box; 

@@ -23,6 +23,11 @@
 .search-bar-icon {
     fill: $gray;
     margin-right: .8rem;
+    transition: all .4s ease;
+
+    &-active {
+        fill: $persian-blue;
+    }
 }
 
 @media #{$mobile} {

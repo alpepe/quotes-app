@@ -3,6 +3,6 @@
 .main-layout-container {
     @extend %flex-container-column;
     align-items: center;
-    padding: 1.6rem;
-    background-color: $athens-gray;
+    padding: 1.6rem 1.3rem;
+    min-height: 100%;
 }

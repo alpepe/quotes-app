@@ -27,6 +27,10 @@ class QuotesList extends React.Component {
             ? quotes.filter((quote) => quote.content.toLowerCase().includes(searchBarValue))
             : quotes;
 
+        if (isSearchApplied && quotesForProcessing.length === 0) {
+            return <div className="quotes-list-no-results" >No results found</div>
+        }
+
         //added 'concat()' to avoid muting the 'quotesForProcessing'
         const sortedQuotes = quotesForProcessing.concat().sort((a, b) => ascSortingDirection
             ? sortАscending(a.participant[sortingFilter], b.participant[sortingFilter])
