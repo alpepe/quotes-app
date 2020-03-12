@@ -5,4 +5,8 @@
     align-items: center;
     padding: 1.6rem 1.3rem;
     min-height: 100%;
+
+    @media #{$tablet} {
+        padding: 1.7rem .5rem;
+    }
 }

@@ -39,6 +39,13 @@
         .quote-close-icon {
             fill: $gray;
             cursor: pointer;
+            transition: all .4s ease;
+
+            @media (hover: hover) {
+                &:hover {
+                    fill: $persian-blue;
+                }
+              }
         }
     }
 
@@ -68,5 +75,12 @@
     .quote-participant-info {
         color: $gray;
         font-size: .8rem;
+    }
+}
+
+@media #{$tablet} {
+    .quote-container {
+        padding: 1.7rem 1rem;
+        margin: .4rem;
     }
 }
